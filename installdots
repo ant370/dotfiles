@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Install and Backup for dotfiles
+
+echo Backing up dot files and installing new
+
+mkdir ~/.dotbackup
+
+backup_dir=$(date +'%m-%d-%Y')
+mkdir "${HOME}/.dotbackup/${backup_dir}"
+
+#Backup
+cp ~/.bashrc "${HOME}/.dotbackup/${backup_dir}/.bashrc"
+cp ~/.bash_profile "${HOME}/.dotbackup/${backup_dir}/.bash_profile"
+cp ~/.gitconfig "${HOME}/.dotbackup/${backup_dir}/.gitconfig"
+
+#move
+cp .bashrc ~/.bashrc
+cp .bash_profile ~/.bash_profile
+cp .gitconfig ~/.gitconfig
